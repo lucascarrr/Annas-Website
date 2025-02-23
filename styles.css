@@ -3,53 +3,58 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Public Sans", sans-serif;
-}
-
-/* Navigation Bar */
-nav {
+  }
+  
+  /* Navigation Bar */
+  nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 60px;
     display: flex;
-    justify-content: space-between; /* Keep heading on the left and links on the right */
+    justify-content: space-between;
     align-items: center;
     padding: 0 40px;
-    background: rgba(255, 255, 255, 0.129); /* Semi-transparent background */
+    /* background: transparent; */
+    background: #8685853a;
     backdrop-filter: blur(10px);
     z-index: 1000;
-    box-sizing: border-box; /* Prevent padding from affecting the width */
-}
-
-nav h1 {
-    font-size: 24px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  nav h1 {
+    font-size: 28px;
+    font-weight: normal;
     margin: 0;
-}
-
-/* Navigation Links */
-.nav-links {
+    color: white;
+  }
+  
+  .nav-links {
     display: flex;
     gap: 15px;
-    justify-content: flex-end; /* Align links to the right */
-    flex-shrink: 0; /* Prevent shrinking */
-    overflow: hidden; /* Hide overflow */
-}
-
-.nav-links a {
+    justify-content: flex-end;
+    flex-shrink: 0;
+  }
+  
+  .nav-links a {
     text-decoration: none;
-    color: black;
-    font-size: 16px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
     transition: opacity 0.3s;
-}
-
-.nav-links a:hover {
+  }
+  
+  .nav-links a:hover {
     opacity: 0.6;
-}
-
-/* Header (Hero Section) */
-#header {
-    background: url('Images/background.JPG') no-repeat center center/cover;
+  }
+  
+  /* Header (Hero Section) */
+  #header {
+    background: url(Images/Cover.jpg);
+    background-size: cover;
+    background-position: center;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -58,64 +63,120 @@ nav h1 {
     color: white;
     font-size: 2rem;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    background-color: #333; /* Fallback color */
-}
-
-#header h2 {
-    margin: 0;
-    font-size: 2rem;
-}
-
-/* General Section Styling */
-section {
-    width: 100%;
+    background-color: #333;
+  }
+  
+  /* General Section Styling for sections besides header */
+  section:not(#header) {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
     height: 100vh;
+  }
+  
+  /* Common Section Heading */
+  .section-heading {
+    margin-bottom: 20px;
+    font-size: 30pt;
+    align-self: flex-start;
+  }
+  
+  /* Common Section Container */
+  .section-container {
     display: flex;
-    justify-content: center;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  a {
+    color: black;
+  }
+  /* Modifier classes for container layout */
+  .flex-row {
+    flex-direction: row;
+  }
+  
+  .flex-column {
+    flex-direction: column;
+  }
+  
+  /* Common Container Text */
+  .container-text {
+    flex: 1;
+    font-size: 20px;
+    line-height: 1.5;
+    align-self: flex-start;
+    padding-top: 1%;
+  }
+  
+  /* Images inside section container */
+  .section-container img {
+    max-height: 80vh;
+    width: auto;
+  }
+  
+/* Options for collections images */
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-}
-
-/* Styling for the second page with centered images */
-#second-page {
-    display: flex;
-    justify-content: center; /* Center the .Images div horizontally */
-    align-items: center; /* Center vertically */
-    width: 100%; /* Take full width of the screen */
-    height: 100vh; /* Full height of the viewport */
-    background-color: #FFF6EB;
-}
-
-#second-page .Images {
-    display: flex;
-    justify-content: space-between; /* Space out the images evenly */
-    width: 80%; /* 50% of the screen width for the image container */
-    align-items: center;
-}
-
-#second-page img {
-    padding-top: 10%;
-    width: 30%; /* Set each image to take up 30% of the container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure images cover the container without stretching */
-}
-
-#second-page .bank01 {
-    padding-bottom: 15%;
-}
-
-#second-page .bank02 {
-    padding-bottom: 0%;
-}
-
-#second-page .bank03 {
-    padding-bottom: 10%;
-}
-
-
-/* Footer */
-footer {
-    background: #222;
-    color: white;
+    width: 100%;
+    align-self: center;
+  }
+  
+  .options img {
+    width: 30%;
+    max-width: 400px;
+    height: auto;
+  }
+  
+  /* Collections specific: h3 in collections container */
+  .collections-container h3 {
+    margin: 0;
+    margin-bottom: 50px;
+    font-size: 32px;
+    align-self: flex-start;
+  }
+  
+  /* Footer */
+  footer {
+    background: white;
+    color: black;
     text-align: center;
     padding: 20px;
-}
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    nav {
+      padding: 0 20px;
+    }
+    nav h1 {
+      font-size: 24px;
+    }
+    .nav-links {
+      gap: 10px;
+    }
+    .nav-links a {
+      font-size: 16px;
+    }
+    #header {
+      font-size: 1.5rem;
+    }
+    section {
+      align-items: center;
+      text-align: center;
+    }
+    .container-text {
+      max-width: 100%;
+      padding: 15px;
+      margin: 0 auto;
+    }
+  }
+  
