@@ -14,35 +14,80 @@
         <h1>Thomas & Verburg</h1>
         <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
+            <a href="#collections">Collection</a>
+            <a href="#order">Contact</a>
         </div>
     </nav>
 
-    <header id="header">
-    </header>
+    <header id="header"></header>
 
-    <section id="second-page">
-        <div class="Images">
-            <img class="bank01" src="Images/bank01.jpg" alt="Image 1">
-            <img class="bank02" src="Images/bank02.jpg" alt="Image 2">
-            <img class="bank03" src="Images/bank03.jpg" alt="Image 3">
+    <section id="about">
+        <h2 class="section-heading">About</h2>
+        <div class="section-container flex-row">
+            <img src="Images/About.jpg" alt="About Image">
+            <div class="container-text">
+                Founded in South Africa and based between Amsterdam and Cape Town, creative duo Anna Thomas and Kim
+                Verburg merge their expertise in carpentry and architecture to create furniture that is both functional
+                and playful. Currently, Thomas & Verburg have a strong focus on benches – thoughtfully produced in small
+                batches using locally sourced wood. However, this is just the beginning. Our vision is to grow into a
+                broader design space, exploring new forms, materials, and ideas that push the boundaries of contemporary
+                furniture. Follow along as we evolve and grow!
+            </div>
         </div>
     </section>
 
-
-    <section id="about">
-        <!-- About content goes here -->
+    <section id="collections">
+        <h2 class="section-heading">Collections</h2>
+        <div class="section-container flex-column collections-container">
+            <h3>OAK BUNK S4</h3>
+            <div class="options">
+                <img class="collections" src="Images/For Order 1.jpg" alt="For Order 1">
+                <img class="collections" src="Images/For Order 2.jpg" alt="For Order 2">
+                <img class="collections" src="Images/For Order 3.jpg" alt="For Order 3">
+            </div>
+        </div>
     </section>
 
-    <section id="portfolio">
-        <!-- Portfolio content goes here -->
+    <section id="order">
+        <h2 class="section-heading">Order</h2>
+        <div class="section-container flex-row">
+            <img src="Images/Order.jpg" alt="Order Image">
+            <div class="container-text">
+                Our benches are made in small, carefully considered batches using locally harvested wood sourced in
+                South Africa. Crafted by skilled small-scale carpenters, each piece reflects quality, craftsmanship, and
+                sustainability. Since we work with the wood we have on hand, availability may vary. While we strive to
+                keep stock of our collections as displayed online, we cannot always guarantee immediate availability. To
+                check current stock, please email us — we'd be happy to assist! You can also sign up for our newsletter
+                to be the first to know when new stock becomes available. For any other inquiries, feel free to get in
+                touch. We'd love to hear from you.
+                <br> <br>
+
+                Contact us at: <a href="mailto:hello@thomasverberg.com">hello@thomasverberg.com</a>
+
+            </div>
+        </div>
     </section>
 
     <footer>
-        <!-- Footer content goes here -->
         <p>© 2025 Thomas & Verburg</p>
     </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down: hide nav
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up: show nav
+                nav.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    </script>
 </body>
 
 </html>
